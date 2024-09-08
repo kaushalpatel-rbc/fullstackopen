@@ -5,6 +5,7 @@ sequenceDiagram
 
   browser ->> server: POST /new_note
   activate server
+  Note right of server: Update notes with new note data
   server -->> browser: 302 – Redirect to /notes
   deactivate server
   Note over browser,server: The browser redirects to location <br/> indicated by the server
