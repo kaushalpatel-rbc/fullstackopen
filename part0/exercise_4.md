@@ -1,7 +1,12 @@
 ```mermaid
 sequenceDiagram
+  actor user
   participant browser
   participant server
+
+  user ->> browser: click submit with note data
+
+  activate browser
 
   browser ->> server: POST /new_note
   activate server
@@ -31,4 +36,6 @@ sequenceDiagram
   server -->> browser: notes data in the form `[{...}, {...}, ...]`
   deactivate server
   Note over browser,server: The browser renders notes by <br/> executing the callback function
+
+  deactivate browser
 ```
